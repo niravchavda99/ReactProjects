@@ -2,8 +2,9 @@ const mongoose = require("mongoose");
 const config = require("config");
 
 module.exports = function () {
-  const db = config.get("db");
-
+  let db = config.get("db");
+  db =
+    "mongodb+srv://pokedex_user:pokedexPASSWORD@cluster0.1kcru.mongodb.net/pokedex?retryWrites=true&w=majority";
   mongoose
     .connect(db, {
       useNewUrlParser: true,

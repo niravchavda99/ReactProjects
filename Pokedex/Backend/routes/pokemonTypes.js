@@ -12,4 +12,8 @@ router.get("/:id", async (req, res) => {
   res.send(type);
 });
 
+router.post("/", async (req, res) => {
+  console.log(req.body);
+});
+
 module.exports = router;

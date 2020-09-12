@@ -24,7 +24,7 @@ const pokemonTypes = [
 ];
 
 async function saveTypes() {
-  pokemonTypes.forEach((type) => {
+  pokemonTypes.forEach(async (type) => {
     const pokemonType = { name: type };
     await new PokemonType(pokemonType).save();
   });
@@ -32,7 +32,7 @@ async function saveTypes() {
 
 async function saveIt() {
   const pokemons = await csv().fromFile("../PokemonDatabaseWithoutID.csv");
-  
+
   pokemons.forEach(async (pokemon) => {
     await new Pokemon(pokemon).save();
   });
