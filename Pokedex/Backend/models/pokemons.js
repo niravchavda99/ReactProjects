@@ -1,0 +1,57 @@
+const mongoose = require("mongoose");
+const { pokemonTypeSchema } = require("./pokemonTypes");
+
+const pokemonSchema = new mongoose.Schema({
+  pokemonNumber: Number,
+  pokemonName: String,
+  imageUrl: String,
+  classification: String,
+  alternateFormName: String,
+  originalPokemonId: Number,
+  legendaryType: String,
+  pokemonHeight: Number,
+  pokemonWeight: Number,
+  primaryType: String,
+  secondaryType: String,
+  primaryAbility: String,
+  primaryAbilityDescription: String,
+  secondaryAbility: String,
+  secondaryAbilityDescription: String,
+  hiddenAbility: String,
+  hiddenAbilityDescription: String,
+  specialEventAbility: String,
+  specialEventAbilityDescription: String,
+  maleRatio: Number,
+  femaleRatio: Number,
+  baseHappiness: Number,
+  gameOfOrigin: String,
+  regionOfOrigin: String,
+  healthStat: Number,
+  attackStat: Number,
+  defenseStat: Number,
+  specialAttackStat: Number,
+  specialDefenseStat: Number,
+  speedStat: Number,
+  baseStatTotal: Number,
+  healthEV: Number,
+  attackEV: Number,
+  defenseEV: Number,
+  specialAttackEV: Number,
+  specialDefenseEV: Number,
+  speedEV: Number,
+  evYieldTotal: Number,
+  catchRate: Number,
+  experienceGrowth: String,
+  experienceGrowthTotal: Number,
+  experienceYield: Number,
+  primaryEggGroup: String,
+  secondaryEggGroup: String,
+  eggCycleCount: Number,
+  preEvolutionPokemonId: Number,
+  evolutionDetails: String,
+});
+
+const Pokemon = mongoose.model("Pokemon", pokemonSchema);
+
+module.exports.pokemonSchema = pokemonSchema;
+module.exports.Pokemon = Pokemon;
